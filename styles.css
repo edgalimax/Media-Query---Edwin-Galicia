@@ -1,0 +1,165 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-image: url('Images/fondo1.webp'); /* Añadir la imagen de fondo */
+    background-size: cover; /* La imagen cubrirá todo el fondo */
+    background-position: center; /* Centrar la imagen */
+    background-attachment: fixed; /* La imagen no se desplaza con el contenido */
+    color: #ff0; /* Texto amarillo neón */
+}
+
+header {
+    background-color: rgba(255, 255, 0, 0.8); /* Fondo amarillo neón con transparencia */
+    color: #000; /* Texto negro */
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* Ajusta la altura según sea necesario */
+    width: auto; /* Mantiene la proporción */
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu ul li {
+    margin-left: 1rem;
+}
+
+.menu ul li a {
+    color: #000; /* Texto negro */
+    text-decoration: none;
+}
+
+main {
+    padding: 2rem;
+    text-align: center;
+    color: #ff0; /* Texto amarillo neón */
+}
+
+.content-cards {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+    flex-wrap: wrap; /* Asegura que las estrellas se acomoden bien en pantallas pequeñas */
+}
+
+.card {
+    background-color: rgba(255, 255, 0, 0.8); /* Fondo amarillo neón con transparencia */
+    padding: 2rem;
+    margin: 1rem;
+    width: 22%; /* Ajusta el ancho para cuatro estrellas */
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.5); /* Sombra amarilla neón */
+    color: #000; /* Texto negro */
+    clip-path: polygon(
+        50% 0%, 61% 35%, 98% 35%, 
+        68% 57%, 79% 91%, 50% 70%, 
+        21% 91%, 32% 57%, 2% 35%, 
+        39% 35%
+    ); /* Forma de estrella */
+}
+
+footer {
+    background-color: rgba(255, 255, 0, 0.8); /* Fondo amarillo neón con transparencia */
+    color: #000; /* Texto negro */
+    text-align: center;
+    padding: 1rem;
+}
+
+.social-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.social-links li {
+    display: inline;
+    margin: 0 0.5rem;
+}
+
+.social-links a {
+    color: #000; /* Texto negro */
+    text-decoration: none;
+}
+
+/* Media Query para Dispositivos Móviles (máx. 600px) */
+@media (max-width: 600px) {
+    .menu ul {
+        display: none; /* Ocultar el menú estándar */
+    }
+    
+    .menu::after {
+        content: '☰'; /* Añadir icono de menú hamburguesa */
+        font-size: 1.5rem;
+        color: #000; /* Icono negro */
+        cursor: pointer;
+    }
+
+    .content-cards {
+        flex-direction: column; /* Apilar las estrellas */
+    }
+
+    .card {
+        width: 100%; /* Ancho completo para cada estrella */
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    footer {
+        padding: 1rem;
+    }
+}
+
+/* Media Query para Tabletas (601px a 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .content-cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .card {
+        width: 45%; /* Mostrar las estrellas en dos columnas */
+    }
+
+    main {
+        padding: 2rem;
+    }
+
+    footer {
+        padding: 1rem;
+    }
+}
+
+/* Media Query para Computadoras de Escritorio (más de 1024px) */
+@media (min-width: 1025px) {
+    .content-cards {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .card {
+        width: 22%; /* Mostrar las estrellas en cuatro columnas */
+    }
+
+    main {
+        padding: 3rem;
+    }
+
+    footer {
+        padding: 2rem;
+    }
+}
